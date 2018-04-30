@@ -22,10 +22,13 @@ try:
             subPieces = pieces[1].split('\\N')
             if len(subPieces) >= 2:
                 index = subPieces[1].find('}')
+                format2Line = ''
                 if index != -1:
+                    format2Line = subPieces[1][:index+1]
+                    format2Line = format2Line.replace('fs14', 'fs10')
                     subPieces[1] = subPieces[1][index+1:]
                 subPieces[1] = subPieces[1].strip('.\n')
-                result = pieces[0] + ',,' + subPieces[1] + '\\N' + subPieces[0] + '.\n'
+                result = pieces[0] + ',,' + subPieces[1] + '\\N' + format2Line + subPieces[0] + '.\n'
             else:
                 result = pieces[0] + ',,' + subPieces[0]
             f2.write(result)
