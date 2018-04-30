@@ -25,7 +25,7 @@ try:
                 format2Line = ''
                 if index != -1:
                     format2Line = subPieces[1][:index+1]
-                    format2Line = format2Line.replace('fs14', 'fs10')
+                    format2Line = format2Line.replace('fs14', 'fs8')
                     subPieces[1] = subPieces[1][index+1:]
                 subPieces[1] = subPieces[1].strip('.\n')
                 result = pieces[0] + ',,' + subPieces[1] + '\\N' + format2Line + subPieces[0] + '.\n'
